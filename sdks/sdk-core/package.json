@@ -2,7 +2,7 @@
   "name": "@ring-protocol/sdk-core",
   "version": "1.0.0",
   "description": "Shared TypeScript primitives for Ring SDK packages",
-  "repository": "https://github.com/RingProtocol/ring-sdks.git",
+  "repository": "https://github.com/RingProtocol/sdks.git",
   "keywords": [
     "ring-protocol",
     "ethereum"

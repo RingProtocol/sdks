@@ -2,7 +2,7 @@
   "name": "@ring-protocol/uniswap-v2-sdk",
   "version": "1.0.0",
   "description": "Lower-level Uniswap V2-style SDK primitives for Ring integrations",
-  "repository": "https://github.com/RingProtocol/ring-sdks.git",
+  "repository": "https://github.com/RingProtocol/sdks.git",
   "keywords": [
     "ring-protocol",
     "ethereum"

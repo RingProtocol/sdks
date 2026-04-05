@@ -2,7 +2,7 @@
   "name": "@ring-protocol/v2-sdk",
   "version": "1.0.0",
   "description": "FEW-aware v2 SDK for Ring Swap integrations",
-  "repository": "https://github.com/RingProtocol/ring-sdks.git",
+  "repository": "https://github.com/RingProtocol/sdks.git",
   "keywords": [
     "ring-protocol",
     "ethereum"
