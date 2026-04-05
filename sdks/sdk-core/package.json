@@ -20,7 +20,7 @@
   "scripts": {
     "build": "../../node_modules/.bin/tsup src/index.ts --format cjs,esm --dts --sourcemap --clean --out-dir dist --external jsbi,big.js,decimal.js-light,toformat,@ethersproject/address,@ethersproject/bytes,@ethersproject/keccak256,@ethersproject/strings,tiny-invariant",
     "lint": "tsdx lint src",
-    "release": "semantic-release",
+    "release": "../../node_modules/.bin/semantic-release",
     "start": "tsdx watch",
     "test": "tsdx test"
   },
