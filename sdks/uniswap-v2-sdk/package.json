@@ -20,7 +20,7 @@
   "scripts": {
     "build": "../../node_modules/.bin/tsup src/index.ts --format cjs,esm --dts --sourcemap --clean --out-dir dist --external @ring-protocol/sdk-core,@ring-protocol/v2-sdk,jsbi,@ethersproject/address,@ethersproject/solidity,@ethersproject/bignumber,tiny-invariant,tiny-warning",
     "lint": "tsdx lint src",
-    "release": "semantic-release",
+    "release": "../../node_modules/.bin/semantic-release",
     "start": "tsdx watch",
     "test": "tsdx test"
   },
