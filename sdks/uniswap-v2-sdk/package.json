@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Lower-level Uniswap V2-style SDK primitives for Ring integrations",
   "repository": "https://github.com/RingProtocol/sdks.git",
+  "homepage": "https://docs.ring.exchange/sdk/v2/overview",
+  "bugs": {
+    "url": "https://github.com/RingProtocol/sdks/issues"
+  },
   "keywords": [
     "ring-protocol",
     "ethereum"

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "FEW-aware v2 SDK for Ring Swap integrations",
   "repository": "https://github.com/RingProtocol/sdks.git",
+  "homepage": "https://docs.ring.exchange/sdk/v2/overview",
+  "bugs": {
+    "url": "https://github.com/RingProtocol/sdks/issues"
+  },
   "keywords": [
     "ring-protocol",
     "ethereum"

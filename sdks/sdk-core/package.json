@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Shared TypeScript primitives for Ring SDK packages",
   "repository": "https://github.com/RingProtocol/sdks.git",
+  "homepage": "https://docs.ring.exchange/sdk/core/overview",
+  "bugs": {
+    "url": "https://github.com/RingProtocol/sdks/issues"
+  },
   "keywords": [
     "ring-protocol",
     "ethereum"
