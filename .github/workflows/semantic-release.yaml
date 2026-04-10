@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - beta
+      - main
+
+jobs:
+  release:
+    name: Release
+    environment:
+      name: production
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          cache: yarn
+          node-version: 22.14.0
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@ring-protocol'
+          # If NPM_TOKEN is set, npm authentication is configured automatically.
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build SDK's
+        run: yarn g:build
+
+      - name: Release Needed SDK's
+        run: yarn g:release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Publishing to npm still requires an npm token even for a public repository.
+          # semantic-release will fail if NPM_TOKEN is not configured.
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # Enable verbose logs.
+          DEBUG: semantic-release:*
+          NODE_ENV: production

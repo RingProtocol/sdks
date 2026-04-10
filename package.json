@@ -1,0 +1,36 @@
+{
+  "name": "ring-sdks",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "yarn@3.2.3",
+  "engines": {
+    "node": ">=22.14.0",
+    "yarn": ">=3.2.3"
+  },
+  "workspaces": [
+    "sdks/*"
+  ],
+  "scripts": {
+    "g:build": "turbo run build",
+    "g:lint": "turbo run lint",
+    "g:test": "turbo run test",
+    "g:release": "turbo run release --concurrency=1 --continue",
+    "sdk": "yarn workspace"
+  },
+  "dependencies": {
+    "@semantic-release/exec": "6.0.3",
+    "eslint-plugin-prettier": "^3.4.1",
+    "semantic-release": "^25.0.1",
+    "semantic-release-monorepo": "8.0.2",
+    "turbo": "1.10.16"
+  },
+  "resolutions": {
+    "@babel/core": "7.28.5",
+    "@babel/parser": "7.28.5",
+    "@babel/plugin-transform-typescript": "7.28.5"
+  },
+  "devDependencies": {
+    "tsup": "8.5.1",
+    "typescript": "4.9.5"
+  }
+}

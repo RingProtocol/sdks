@@ -1,0 +1,90 @@
+{
+  "name": "@ring-protocol/v2-sdk",
+  "version": "1.0.0",
+  "description": "FEW-aware v2 SDK for Ring Swap integrations",
+  "repository": "https://github.com/RingProtocol/sdks.git",
+  "keywords": [
+    "ring-protocol",
+    "ethereum"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "../../node_modules/.bin/tsup src/index.ts --format cjs,esm --dts --sourcemap --clean --out-dir dist --external @ring-protocol/sdk-core,jsbi,ethers,@ethersproject/address,@ethersproject/solidity,@ethersproject/bignumber,tiny-invariant,tiny-warning",
+    "lint": "tsdx lint src",
+    "release": "../../node_modules/.bin/semantic-release",
+    "start": "tsdx watch",
+    "test": "tsdx test"
+  },
+  "dependencies": {
+    "@ethersproject/address": "^5.0.2",
+    "@ethersproject/solidity": "^5.0.9",
+    "@ring-protocol/sdk-core": "workspace:*",
+    "ethers": "^5.7.2",
+    "jsbi": "^3.1.4",
+    "tiny-invariant": "^1.1.0",
+    "tiny-warning": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/big.js": "^4.0.5",
+    "@types/jest": "^24.0.25",
+    "@uniswap/v2-core": "^1.0.1",
+    "eslint": "^7.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-functional": "^3.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "jest": "25.5.0",
+    "prettier": "^2.4.1",
+    "tsdx": "^0.14.1",
+    "typescript": "^4.3.3"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": false
+  },
+  "release": {
+    "extends": "semantic-release-monorepo",
+    "branches": [
+      {
+        "name": "main",
+        "prerelease": false
+      }
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": "../../publishing/release-rules.cjs"
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "node ../../publishing/replace-workspace-deps.js",
+          "successCmd": "git restore ../*/package.json ../../yarn.lock && rm -f ../../yarn.lock.bak && yarn --cwd ../..",
+          "failCmd": "git restore ../*/package.json ../../yarn.lock && rm -f ../../yarn.lock.bak && yarn --cwd ../.."
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  }
+}
