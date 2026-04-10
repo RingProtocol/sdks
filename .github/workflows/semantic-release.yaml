@@ -20,9 +20,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -31,12 +33,11 @@ jobs:
           node-version: 22.14.0
           registry-url: 'https://registry.npmjs.org'
           scope: '@ring-protocol'
-          # If NPM_TOKEN is set, npm authentication is configured automatically.
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
-        run: yarn --immutable
+        run: yarn install --immutable
 
       - name: Build SDK's
         run: yarn g:build
