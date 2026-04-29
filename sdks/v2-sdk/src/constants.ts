@@ -88,6 +88,9 @@ export const INIT_CODE_HASH_MAP: { [chainId: number]: string } = {
 
   // megaeth mainnet
   4326: '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f',
+
+  // tron mainnet
+  728126428: '0x9dd9bfc2f6c1103a6c01d9c6a4044e4b8a9361f92df2728cdc3729922d56748e',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)

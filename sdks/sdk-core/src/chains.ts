@@ -37,7 +37,8 @@ export enum ChainId {
   STORY_MAINNET = 1514,
   HYPER_MAINNET = 999,
   XLAYER_MAINNET = 196,
-  MEGAETH_MAINNET = 4326
+  MEGAETH_MAINNET = 4326,
+  TRON_MAINNET = 728126428
 }
 
 export const SUPPORTED_CHAINS = [
@@ -77,7 +78,8 @@ export const SUPPORTED_CHAINS = [
   ChainId.STORY_MAINNET,
   ChainId.HYPER_MAINNET,
   ChainId.XLAYER_MAINNET,
-  ChainId.MEGAETH_MAINNET
+  ChainId.MEGAETH_MAINNET,
+  ChainId.TRON_MAINNET
 ] as const
 export type SupportedChainsType = typeof SUPPORTED_CHAINS[number]
 
