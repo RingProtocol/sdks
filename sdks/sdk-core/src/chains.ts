@@ -37,7 +37,8 @@ export enum ChainId {
   STORY_MAINNET = 1514,
   HYPER_MAINNET = 999,
   XLAYER_MAINNET = 196,
-  MEGAETH_MAINNET = 4326
+  MEGAETH_MAINNET = 4326,
+  ROBINHOOD = 4663,
 }
 
 export const SUPPORTED_CHAINS = [
@@ -70,6 +71,7 @@ export const SUPPORTED_CHAINS = [
   ChainId.MONAD_TESTNET,
   ChainId.SONEIUM,
   ChainId.MONAD,
+  ChainId.ROBINHOOD,
 
   // networks exclusive to ring swap
   ChainId.BLAST_SEPOLIA,

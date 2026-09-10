@@ -6,3 +6,5 @@ node_modules
 dist
 .idea/
 .claude/
+
+.local-packages/

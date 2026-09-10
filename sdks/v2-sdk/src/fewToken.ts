@@ -72,6 +72,10 @@ const FEW_WRAPPED_FACTORY_CONFIGS: { [key: number]: ChainConfig } = {
     fewWrapFactory: '0xEeE400Eabfba8F60f4e6B351D8577394BeB972CD',
     bytecode: ETHMainnetFewWrappedTokenJSON.bytecode,
   },
+  [4663]: {
+    fewWrapFactory: '0x0b255357b5681bb59ed67502206a9ec5d03a4b11',
+    bytecode: ETHMainnetFewWrappedTokenJSON.bytecode,
+  },
 }
 
 const isFewWrappedTokenSupported = (chainId: number): boolean => {

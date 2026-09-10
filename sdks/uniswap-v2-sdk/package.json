@@ -1,6 +1,6 @@
 {
   "name": "@ring-protocol/uniswap-v2-sdk",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Lower-level Uniswap V2-style SDK primitives for Ring integrations",
   "repository": "https://github.com/RingProtocol/sdks.git",
   "homepage": "https://docs.ring.exchange/sdk/v2/overview",
@@ -26,7 +26,7 @@
     "lint": "tsdx lint src",
     "release": "../../node_modules/.bin/semantic-release",
     "start": "tsdx watch",
-    "test": "tsdx test"
+    "test": "tsdx test --runInBand --watch=false"
   },
   "dependencies": {
     "@ethersproject/address": "^5.0.2",

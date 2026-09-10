@@ -32,6 +32,7 @@ export const V2_FACTORY_ADDRESSES: { [chainId: number]: string } = {
   [ChainId.STORY_MAINNET]: '0xEeE400Eabfba8F60f4e6B351D8577394BeB972CD',
   [ChainId.XLAYER_MAINNET]: '0xdf38f24fe153761634be942f9d859f3dba857e95', // use uniswap v2 factory address
   4326: '0xbf56488c857a881ae7e3bed27cf99c10a7ab7e50', // use uniswap v2 factory address
+  [ChainId.ROBINHOOD]: '0x29e47f8e17341d3ab23839bc7d56d286b4a35a19',
 }
 
 export const FACTORY_ADDRESS_MAP: { [chainId: number]: string } = V2_FACTORY_ADDRESSES
@@ -88,6 +89,8 @@ export const INIT_CODE_HASH_MAP: { [chainId: number]: string } = {
 
   // megaeth mainnet
   4326: '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f',
+  // Robinhood factory creation code verified by read-only createPair simulation.
+  [ChainId.ROBINHOOD]: '0xb7963b5cfdf9e42bd2e41aaa19203f3bf84b51b6b7b24b64f7ab2313101bd54c',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)

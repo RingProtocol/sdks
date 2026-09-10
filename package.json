@@ -13,9 +13,10 @@
   "scripts": {
     "g:build": "turbo run build",
     "g:lint": "turbo run lint",
-    "g:test": "turbo run test",
+    "g:test": "turbo run test --concurrency=1",
     "g:release": "turbo run release --concurrency=1 --continue",
-    "sdk": "yarn workspace"
+    "sdk": "yarn workspace",
+    "test:robinhood-network": "node --test test/robinhood/network-only.test.cjs"
   },
   "dependencies": {
     "@semantic-release/exec": "6.0.3",
@@ -27,7 +28,8 @@
   "resolutions": {
     "@babel/core": "7.28.5",
     "@babel/parser": "7.28.5",
-    "@babel/plugin-transform-typescript": "7.28.5"
+    "@babel/plugin-transform-typescript": "7.28.5",
+    "jsbi": "3.2.5"
   },
   "devDependencies": {
     "tsup": "8.5.1",

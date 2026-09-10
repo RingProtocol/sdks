@@ -62,7 +62,8 @@ export const V2_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.MONAD_TESTNET]: '0x733e88f248b742db6c14c0b1713af5ad7fdd59d0',
   [ChainId.SONEIUM]: '0x97febbc2adbd5644ba22736e962564b23f5828ce',
   [ChainId.XLAYER_MAINNET]: '0x630DB8E822805c82Ca40a54daE02dd5aC31f7fcF',
-  [ChainId.MEGAETH_MAINNET]: '0xbf56488c857a881ae7e3bed27cf99c10a7ab7e50'
+  [ChainId.MEGAETH_MAINNET]: '0xbf56488c857a881ae7e3bed27cf99c10a7ab7e50',
+  [ChainId.ROBINHOOD]: '0x8bcEaA40B9AcdfAedF85AdF4FF01F5Ad6517937f',
 }
 /**
  * @deprecated use V2_ROUTER_ADDRESSES instead
@@ -86,7 +87,8 @@ export const V2_ROUTER_ADDRESSES: AddressMap = {
   [ChainId.MONAD_TESTNET]: '0xfb8e1c3b833f9e67a71c859a132cf783b645e436',
   [ChainId.SONEIUM]: '0x273f68c234fa55b550b40e563c4a488e0d334320',
   [ChainId.XLAYER_MAINNET]: '0xd69B062F140ba4b9a653F5b3468A914927907C0B',
-  [ChainId.MEGAETH_MAINNET]: '0xb73055db2b3a3eae87a331dd88e4a80b43602690'
+  [ChainId.MEGAETH_MAINNET]: '0xb73055db2b3a3eae87a331dd88e4a80b43602690',
+  [ChainId.ROBINHOOD]: '0x89e5DB8B5aA49aA85AC63f691524311AEB649eba',
 }
 
 // Networks that share most of the same addresses i.e. Mainnet, Goerli, Optimism, Arbitrum, Polygon
@@ -516,7 +518,23 @@ const MEGAETH_MAINNET_ADDRESSES: ChainAddresses = {
   v4QuoterAddress: '0x94bdc671f0c35f44a1daa53143fd1f868d1623b9',
 
   mixedRouteQuoterV1Address: '0x1F1a8dC7E138C34b503Ca080962aC10B75384a27',
-  mixedRouteQuoterV2Address: '0x1F1a8dC7E138C34b503Ca080962aC10B75384a27'
+  mixedRouteQuoterV2Address: '0x1F1a8dC7E138C34b503Ca080962aC10B75384a27',
+}
+
+const ROBINHOOD_ADDRESSES: ChainAddresses = {
+  v3CoreFactoryAddress: '0x1f7d7550B1b028f7571E69A784071F0205FD2EfA',
+  multicallAddress: '0x282A3C4D320Cc7f0d5eaf56B8029e4B88338f0a3',
+  quoterAddress: '0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7',
+  nonfungiblePositionManagerAddress: '0x73991a25C818Bf1f1128dEAaB1492D45638DE0D3',
+  tickLensAddress: '0x7DfD4F31be6814D2906BDE155c3e1B146EAc1468',
+  swapRouter02Address: '0xCaf681a66D020601342297493863E78C959E5cb2',
+
+  v4PoolManagerAddress: '0x8366a39CC670B4001A1121B8F6A443A643e40951',
+  v4PositionManagerAddress: '0x58daec3116aae6D93017bAAea7749052E8a04fA7',
+  v4StateView: '0xF3334192D15450CdD385c8B70e03f9A6bD9E673b',
+  v4QuoterAddress: '0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94',
+
+  mixedRouteQuoterV2Address: '0xc01f02abBBd53D72f0A00dc66D8AA9eF0183BF91',
 }
 
 export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses> = {
@@ -549,6 +567,7 @@ export const CHAIN_TO_ADDRESSES_MAP: Record<SupportedChainsType, ChainAddresses>
   [ChainId.MONAD_TESTNET]: MONAD_TESTNET_ADDRESSES,
   [ChainId.SONEIUM]: SONEIUM_ADDRESSES,
   [ChainId.MONAD]: MONAD_ADDRESSES,
+  [ChainId.ROBINHOOD]: ROBINHOOD_ADDRESSES,
 
   // networks exclusive to ring swap
   [ChainId.BLAST_SEPOLIA]: BLAST_SEPOLIA_ADDRESSES,
