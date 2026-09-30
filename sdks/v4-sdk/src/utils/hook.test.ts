@@ -300,4 +300,26 @@ describe('Hook', () => {
       expect(Hook.hasDonatePermissions(hookAfterSwap)).toEqual(false)
     })
   })
+
+  describe('realistic hook addresses (non-zero high bits)', () => {
+    // Regression test: parseInt(address, 16) on a full 160-bit address exceeds
+    // IEEE-754 double precision, and JS bitwise ops then see 0, making every
+    // permission check return false. Real (mined) hook addresses have non-zero
+    // high bytes, unlike the zero-padded fixtures above.
+    const realisticAllHooksAddress = '0xffffffffffffffffffffffffffffffff00003fff'
+    const realisticBeforeSwapAddress = '0xabcdef0123456789abcdef012345678900000080'
+    const realisticEmptyHookAddress = '0xabcdef0123456789abcdef012345678900000000'
+
+    it('returns the same permissions as the zero-padded equivalents', () => {
+      expect(Hook.permissions(realisticAllHooksAddress)).toEqual(Hook.permissions(allHooksAddress))
+      expect(Hook.permissions(realisticEmptyHookAddress)).toEqual(Hook.permissions(emptyHookAddress))
+    })
+
+    it('detects beforeSwap on a realistic address', () => {
+      expect(Hook.hasPermission(realisticBeforeSwapAddress, HookOptions.BeforeSwap)).toEqual(true)
+      expect(Hook.hasSwapPermissions(realisticBeforeSwapAddress)).toEqual(true)
+      expect(Hook.hasPermission(realisticBeforeSwapAddress, HookOptions.AfterSwap)).toEqual(false)
+      expect(Hook.hasPermission(realisticBeforeSwapAddress, HookOptions.BeforeSwapReturnsDelta)).toEqual(false)
+    })
+  })
 })
